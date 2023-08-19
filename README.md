@@ -240,6 +240,12 @@ curl -sSL https://pdm.fming.dev/install-pdm.py | python -
 
 Test your install with `pdm --version`
 
+If it works, go ahead and install this repo with the following command:
+
+```bash
+pdm install
+```
+
 ## A Quick Intro to Streamlit
 
 Right! If you're still with me, congrats! That seems like a whole lot of work, but I assure you it's worth it! We're now ready to see Streamlit!
