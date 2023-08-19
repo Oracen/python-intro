@@ -35,19 +35,34 @@ The steps we'll explicitly cover in the setup phase are:
 
 #### Windows and MacOS
 
+<details>
+<summary></summary>
+
 Go to the following link and down load the relevant 64-bit version:
 https://code.visualstudio.com/download
 
+</details>
+
 #### Linux
+
+<details>
+<summary></summary>
 
 ```bash
 sudo apt-get update && sudo apt-get install snapd
 sudo snap install code
 ```
 
+</details>
+
 ### Installing Git
 
+Follow the instructions below depending on your operating system.
+
 #### Windows
+
+<details>
+<summary></summary>
 
 1. Jump over here and downloadload the installer https://git-scm.com/download/win (64-bit Standalone)
 1. Select `Use Visual Studio Code as Git's default editor` at the default editor screen
@@ -55,7 +70,12 @@ sudo snap install code
 
 Most other options can just be clicked through
 
+</details>
+
 #### MacOS
+
+<details>
+<summary></summary>
 
 ```zsh
 git --version
@@ -63,13 +83,26 @@ git --version
 
 It will work if Git is already installed, otherwise it will prompt you to install. If xCode complains, then just do as it asks you to do.
 
+</details>
+
 #### Linux
+
+<details>
+<summary></summary>
 
 ```bash
 sudo apt install git-all
 ```
 
+</details>
+
 ### Basic command line usage
+
+Open your command lines!
+
+- Windows: run "Git Bash" from the Start menu
+- Linux: `ctrl + alt + t`
+- MacOS: `cmd + space`, then type in "terminal". Select the Terminal program
 
 Moving around, doing folder stuff:
 
@@ -97,20 +130,90 @@ Let's create a new folder to hold all your coding projects, and move into it:
 ```bash
 mkdir --parents ~/projects
 cd ~/projects
-git clone
+git clone https://github.com/Oracen/python-intro.git
 cd python-intro
 ls .
 ```
 
 Keep the terminal open for the next steps!
 
+#### Linux and Mac Users Only:
+
+<details>
+<summary></summary>
+
+Run the following command, and see what is named under the `CMD` heading:
+
+```bash
+ps -p $$
+```
+
+You should see either `bash` (a lot of Linux distros) or `zsh` (MacOS). If you see something else, you're probably a Linux geek and you know what you're doing. Inspect the shell-relevant scripts to see what envs we're setting.
+
+</details>
+
 ### Installing PyEnv
 
+First, we install Pyenv:
+
 #### Windows
+
+<details>
+<summary></summary>
 
 Installing Python is easy. Installing Python the right way (so that everything plays nice) is always a pain. Installing Pyenv is a pain, but it means making Python easy.
 
 First, open PowerShell, and run the following command:
+
+```powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+Next, in Git Bash, run the following command:
+
+```bash
+. ~/projects/python-intro/bootstrap/bash-pyenv-profile.sh
+```
+
+(Don't forget the full-stop at the beginning!)
+
+If this hasn't worked, uh...this workshop is about to get interesting!
+
+</details>
+
+#### Linux and MacOS
+
+<details>
+<summary></summary>
+
+```bash
+curl https://pyenv.run | $SHELL
+```
+
+Remember what shell you were using? If you're using `bash`, run the following:
+
+```bash
+. ~/projects/python-intro/bootstrap/bash-pyenv-profile.sh
+```
+
+If you're using `zsh`, run the following:
+
+```zsh
+. ~/projects/python-intro/bootstrap/zsh-pyenv-profile.sh
+```
+
+</details>
+
+Now that Pyenv is installed, we can install Python easily:
+
+```bash
+pyenv install 3.10
+pyenv global 3.10
+```
+
+Double check Python has been installed properly using `python --version`
+
+###
 
 ## A Quick Intro to Streamlit
 
