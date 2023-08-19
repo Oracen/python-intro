@@ -29,9 +29,12 @@ The steps we'll explicitly cover in the setup phase are:
 1. Basic command line usage
 1. Installing Pyenv to make managing the Python language itself easy
 1. Installing PDM to manage Python projects
-1. (Optional) Set up Docker to make it easy to share your Python projects with others, so they don't have to set it all up!
 
 ### Installing VSCode
+
+VSCode will be our "IDE" - integrated development environment. It's basically a text editor with a lot of handy features (like syntax highlighting, plugins) that make development a lot easier. One nice facet of VSCode is that we can use config files to automatically set up your development environment for you - great for workshops like this!
+
+Follow the instructions below depending on your operating system.
 
 #### Windows and MacOS
 
@@ -56,6 +59,10 @@ sudo snap install code
 </details>
 
 ### Installing Git
+
+Git is a kind of collaboration tool that allows us to easily share our code, and work with others on coding projects. At a high level, it lets me only "commit" the bits of a file that have changed to a remote "repository", which you can then `clone` or `pull`.
+
+Git is an example of a "version control system". There are alternatives to Git, but in practice it's near universal in software engineering.
 
 Follow the instructions below depending on your operating system.
 
@@ -154,7 +161,11 @@ You should see either `bash` (a lot of Linux distros) or `zsh` (MacOS). If you s
 
 ### Installing PyEnv
 
-First, we install Pyenv:
+From time to time, programming languages get an update. This makes a lot of people very angry and is been widely regarded as a bad move. (With apologies to Douglas Adams.)
+
+Pyenv allows us to spend less time handling Python versions. A tool called Anaconda can also do this (as well as other things), but Anaconda comes with licencing conditions that make it unattractive for commercial work. It helps us recover if we accidentally break a Python install, it helps us upgrade, and it helps downstream tooling (such as VSCode or PDM) to switch Python versions based on availability.
+
+Follow the instructions below based on your OS:
 
 #### Windows
 
@@ -213,7 +224,21 @@ pyenv global 3.10
 
 Double check Python has been installed properly using `python --version`
 
-###
+### Installing PDM
+
+Developing software can be hard for many reasons, but a major pain-point is differences in developer's machines causing bugs or outright failures. Package managers are a tool designed to simplify the process of replicating development environments. They do so by assisting with the search for installable code, resolving conflicts between versions, snapshotting the exact versions used by a developer, and bundling a lot of standardised scripting so e.g. my unit test command is the same as yours. They're quickly becoming a standard feature of modern programming languages.
+
+Python didn't have a package manager for a long time, and the early attempts to make them have led to a very scattered build environment. Deploying Python apps used to be very painful! These days, there are a few choices for Python package managers. Still, we are living with the hangovers of the "old" Python build environment, and getting code working is sometimes still a challenge. This is particularly true in the AI/ML space.
+
+We're going to be using PDM, as it "plays nicely" with almost everything in the Python ecosystem. Other common alternatives would be Anaconda and Poetry.
+
+Install PDM with the following command:
+
+```bash
+curl -sSL https://pdm.fming.dev/install-pdm.py | python -
+```
+
+Test your install with `pdm --version`
 
 ## A Quick Intro to Streamlit
 
