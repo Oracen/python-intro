@@ -1,12 +1,54 @@
-[tool.pdm]
-
 [project]
-name = ""
-version = ""
-description = ""
-authors = [
-    {name = "Oracen", email = "alex.stenlake@gmail.com"},
-]
-dependencies = []
+name = "python_intro"
+version = "0.1.0"
+description = "A cute little tutorial library for Python/ML workshop"
+authors = [{ name = "Oracen", email = "alex.stenlake@gmail.com" }]
+dependencies = ["streamlit>=1.25.0"]
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = { text = "MIT" }
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "flake8>=6.1.0",
+    "black>=23.7.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.1",
+    "autoflake>=2.0.1",
+    "pytest>=7.2.1",
+]
+
+[tool.pdm.scripts]
+start-demo = { cmd = "streamlit run ./app/Home.py" }
+test = { shell = "pytest ." }
+autoflake-fix = { cmd = "autoflake ." }
+black-fix = { cmd = "black ." }
+isort-fix = { cmd = "isort ." }
+flake8-check = { cmd = "flake8 ." }
+black-check = { cmd = "black --check ." }
+isort-check = { cmd = "isort --check-only ." }
+mypy-check = "mypy --namespace-packages --check-untyped-defs ."
+format = { composite = ["autoflake-fix", "black-fix", "isort-fix"] }
+lint = { composite = [
+    "mypy-check",
+    "flake8-check",
+    "black-check",
+    "isort-check",
+] }
+
+
+[tool.isort]
+multi_line_output = 3
+force_to_top = ["os", "sys"]
+profile = "black"
+skip_gitignore = true
+
+[tool.autoflake]
+recursive = true
+in-place = true
+remove-all-unused-imports = true
+ignore-init-module-imports = true
+remove-unused-variables = true
+ignore-pass-statements = false
+
+[tool.commitizen]
+version = "0.2.3"
