@@ -197,7 +197,13 @@ If this hasn't worked, uh...this workshop is about to get interesting!
 <details>
 <summary></summary>
 
+Python build has quite a few requirements to compile, so install them first then install PyEnv
+
 ```bash
+sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+        libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+        libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+        libffi-dev liblzma-dev
 curl https://pyenv.run | $SHELL
 ```
 
@@ -218,8 +224,8 @@ If you're using `zsh`, run the following:
 Now that Pyenv is installed, we can install Python easily:
 
 ```bash
-pyenv install 3.10
-pyenv global 3.10
+pyenv install 3.10.12
+pyenv global 3.10.12
 ```
 
 Double check Python has been installed properly using `python --version`
