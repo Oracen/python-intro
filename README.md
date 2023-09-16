@@ -8,7 +8,7 @@ This repo is here to help you set up the software and tools you'll need to write
 
 ![Welcome to your Python journey!](./static/baby-python.jpg "Python")
 
-## What We Will Achive
+## What We Will Achieve
 
 Whenever you want to write code, there are normally a few steps in prepping your machine. We call this "preparing your toolchain", because we'll use multiple layers of tooling to make our lives writing code much, MUCH easier. This takes some time to get right, but I promise that it's worth it! Having your machine set up to run Python opens a world of opportunity for where you can go next.
 
@@ -84,11 +84,31 @@ Most other options can just be clicked through
 <details>
 <summary></summary>
 
+First, enable developer tools with the following command:
+
+```zsh
+xcode-select --install
+```
+
+To make later steps a little easier, we're going to install a package manager called Homebrew. This is fairly simple, if you run the following command.
+
+```zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Check the install with `brew --version`. If the installer asks you to do anything, just select the default options. You can also disable the analytics with the following command:
+
+```zsh
+brew analytics off
+```
+
+Finally, try to check Git:
+
 ```zsh
 git --version
 ```
 
-It will work if Git is already installed, otherwise it will prompt you to install. If xCode complains, then just do as it asks you to do.
+It will work if Git is already installed, otherwise it will prompt you to install. If XCode complains, then just do as it asks you to do.
 
 </details>
 
@@ -192,7 +212,32 @@ If this hasn't worked, uh...this workshop is about to get interesting!
 
 </details>
 
-#### Linux and MacOS
+#### MacOS
+
+<details>
+<summary></summary>
+
+Pyenv installation is fairly simple on MacOS, as Homebrew will do a lot of the heavy lifting here:
+
+```zsh
+brew install pyenv
+```
+
+Remember what shell you were using? If you're using `bash`, run the following:
+
+```bash
+. ~/projects/python-intro/bootstrap/bash-pyenv-profile.sh
+```
+
+If you're using `zsh`, run the following:
+
+```zsh
+. ~/projects/python-intro/bootstrap/zsh-pyenv-profile.sh
+```
+
+</details>
+
+#### Linux
 
 <details>
 <summary></summary>
