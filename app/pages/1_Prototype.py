@@ -40,7 +40,11 @@ st.text(report)
 
 # Add text input
 st.subheader("Try it yourself!")
-st.markdown("Now you can have an idea of")
+st.markdown(
+    "Now you can have an idea of what is likely to work, try inputting a few made-up "
+    "headlines below. See what words and phrases can confuse the model! (I've found "
+    "random line-breaks and symbols can often produce strange results.)"
+)
 default_text = (
     "Socialites unite -  dolphin groups Dolphin groups, or 'pods', rely on socialites "
     "to keep them from collapsing, scientists claim."
@@ -48,7 +52,7 @@ default_text = (
 test_sample = st.text_area("Input a headline here:", value=default_text)
 
 (_, input_prediction_list, similar_samples) = app_functions.generate_predictions(
-    model, [test_sample], 0.1
+    model, [test_sample], 0.25
 )
 
 user_prediction = input_prediction_list[0]

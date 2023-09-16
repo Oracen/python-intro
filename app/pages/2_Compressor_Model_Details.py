@@ -28,4 +28,4 @@ st.image(image_nlp_intuition)
 st.markdown(load_text("2_nlp_intuition.md"))
 
 st.subheader("So What's Going On Here?")
-st.subheader("What Can We Learn?")
+st.markdown(load_text("2_explained.md"))
