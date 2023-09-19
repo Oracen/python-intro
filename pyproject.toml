@@ -20,10 +20,10 @@ dev = [
     "flake8>=6.1.0",
     "black>=23.9.1",
     "isort>=5.12.0",
-    "mypy>=1.5.1",
     "autoflake>=2.0.1",
     "pytest>=7.2.1",
     "jupyter>=1.0.0",
+    "mypy>=1.5.1",
 ]
 
 [tool.pdm.scripts]
