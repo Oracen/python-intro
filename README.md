@@ -96,6 +96,13 @@ To make later steps a little easier, we're going to install a package manager ca
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Then use the following to activate the `brew` command:
+
+```zsh
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 Check the install with `brew --version`. If the installer asks you to do anything, just select the default options. You can also disable the analytics with the following command:
 
 ```zsh
@@ -220,6 +227,7 @@ If this hasn't worked, uh...this workshop is about to get interesting!
 Pyenv installation is fairly simple on MacOS, as Homebrew will do a lot of the heavy lifting here:
 
 ```zsh
+brew install openssl readline sqlite3 xz zlib tcl-tk
 brew install pyenv
 ```
 
