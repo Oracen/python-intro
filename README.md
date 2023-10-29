@@ -2,7 +2,7 @@
 
 ## Hello, World!
 
-If you're reading this, wecome! I assume you're from the audience of the "Beginner's Python" workshop, and it's good to have you here. You're probably used to the Google Collab/Jupyter environment, but this is a step forwards in both complexity, and eventual comfort. Consider this your first steps towards writing some serious Python code.
+If you're reading this, welcome! I assume you're from the audience of the "Beginner's Python" workshop, and it's good to have you here. You're probably used to the Google Colab/Jupyter environment, but this is a step forwards in both complexity, and eventual comfort. Consider this your first steps towards writing some serious Python code.
 
 This repo is here to help you set up the software and tools you'll need to write anything from simple scripts to full-blown applications. By the end of this session you'll be able to run the included machine learning webapp, and hopefully feel comfortable making modifications to it yourselves.
 
@@ -53,7 +53,7 @@ https://code.visualstudio.com/download
 
 ```bash
 sudo apt-get update && sudo apt-get install snapd
-sudo snap install code
+sudo snap install code --classic
 ```
 
 </details>
@@ -71,7 +71,7 @@ Follow the instructions below depending on your operating system.
 <details>
 <summary></summary>
 
-1. Jump over here and downloadload the installer https://git-scm.com/download/win (64-bit Standalone)
+1. Jump over here and download the installer https://git-scm.com/download/win (64-bit Standalone)
 1. Select `Use Visual Studio Code as Git's default editor` at the default editor screen
 1. Select `Git from the command line and also from 3rd-party software` at the adjusting path environment screen
 
@@ -152,7 +152,7 @@ Moving around, doing folder stuff:
 
 Git commands:
 
-- `git clone {url}` : pull down a new rsepo
+- `git clone {url}` : pull down a new repo
 - `git pull` : checks the remote server for newer versions of a git repo
 
 VSCode commands:
@@ -190,7 +190,7 @@ You should see either `bash` (a lot of Linux distros) or `zsh` (MacOS). If you s
 
 From time to time, programming languages get an update. This makes a lot of people very angry and is been widely regarded as a bad move. (With apologies to Douglas Adams.)
 
-Pyenv allows us to spend less time handling Python versions. A tool called Anaconda can also do this (as well as other things), but Anaconda comes with licencing conditions that make it unattractive for commercial work. It helps us recover if we accidentally break a Python install, it helps us upgrade, and it helps downstream tooling (such as VSCode or PDM) to switch Python versions based on availability.
+Pyenv allows us to spend less time handling Python versions. A tool called Anaconda can also do this (as well as other things), but Anaconda comes with licencing conditions that make it unattractive for commercial work. Pyenv helps us recover if we accidentally break a Python install, it helps us upgrade, and it helps downstream tooling (such as VSCode or PDM) to switch Python versions based on availability.
 
 Follow the instructions below based on your OS:
 
@@ -210,7 +210,7 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv
 Next, in Git Bash, run the following command:
 
 ```bash
-. ~/projects/python-intro/bootstrap/bash-pyenv-profile.sh
+. ~/projects/python-intro/bootstrap/bash-pyenv-win-profile.sh
 ```
 
 (Don't forget the full-stop at the beginning!)
@@ -277,8 +277,8 @@ If you're using `zsh`, run the following:
 Now that Pyenv is installed, we can install Python easily:
 
 ```bash
-pyenv install 3.10.12
-pyenv global 3.10.12
+pyenv install 3.10.11
+pyenv global 3.10.11
 ```
 
 Double check Python has been installed properly using `python --version`
